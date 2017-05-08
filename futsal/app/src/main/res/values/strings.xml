@@ -1,11 +1,31 @@
 <resources>
-    <string name="app_name">futsal</string>
+    <string name="app_name">F-Bar</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="openDrawer">Drawer dibuka</string>
     <string name="closeDrawer">Drawer ditutup</string>
-    <string name="navigation_view_item_1">Beranda</string>
-    <string name="navigation_view_item_2">Profil</string>
-    <string name="navigation_view_item_3">Daftar</string>
-    <string name="navigasi_kategori_2">Sub Item Navigasi</string>
-    <string name="navigation_view_item_4">Settings</string>
-    <string name="navigation_view_item_5">About</string>
+    <!-- navigation drawer menu labels -->
+    <string name="navigation_home">Home</string>
+    <string name="navigation_buatper">Buat Pertandingan</string>
+    <string name="navigation_sunting">Sunting</string>
+    <string name="navigation_tempat">Tempat Futsal</string>
+    <string name="navigation_detailper">Detail Pertandingan</string>
+    <string name="navigation_keluar">Keluar</string>
+    <!-- toolbar tittles when navigation menu item is selected -->
+    <string-array name="navigation_item_activity_tittles">
+        <item>Home</item>
+        <item>Buat Pertandingan</item>
+        <item>Sunting</item>
+        <item>Tempat Futsal</item>
+        <item>Detail Pertandingan</item>
+        <item>Keluar</item>
+    </string-array>
+
+    <string name="activity_title_about_us">About Us</string>
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_logout">Keluar</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+    <string name="title_activity_navigasi">navigasi</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

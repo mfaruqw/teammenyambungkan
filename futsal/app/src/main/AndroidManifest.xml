@@ -11,18 +11,25 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Splashscreen"
-            android:screenOrientation="portrait"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".NavigasiActivity" />
+        <activity android:name=".LpPassword" />
+        <activity android:name=".activity_lp_password1" />
+        <activity android:name=".activity_lp_password2" />
+        <activity android:name=".activity.AboutUS" />
+        <activity
+            android:name=".navigasi"
+            android:label="@string/title_activity_navigasi"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

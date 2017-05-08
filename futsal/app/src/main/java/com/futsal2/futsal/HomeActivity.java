@@ -15,6 +15,7 @@ public class HomeActivity extends AppCompatActivity {
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final TextView WelcomeMsg = (TextView) findViewById(R.id.tvWelcomeMsg);
+
     }
 }
  

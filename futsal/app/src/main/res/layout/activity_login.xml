@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Username"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="14dp"
         android:layout_above="@+id/etPassword"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -29,7 +29,7 @@
         android:layout_above="@+id/bSignIn"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="12dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -38,10 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign In"
+        android:background="@color/colorPrimary"
         android:layout_above="@+id/tvRegisterLink"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="60dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -53,14 +54,25 @@
         android:id="@+id/tvRegisterLink"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="28dp" />
+        android:layout_marginBottom="60dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="118dp"
-        android:textSize="100dp"
-        android:text="F-Bar" />
+        android:text="Lupa Password?"
+        android:id="@+id/tvlupapassLink"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:src="@drawable/fbar"
+      android:layout_alignParentTop="true"
+      android:layout_above="@+id/etUsername" />
+
+
+
+
 </RelativeLayout>

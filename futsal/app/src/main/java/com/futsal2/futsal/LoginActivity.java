@@ -19,6 +19,8 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final Button bSignIn = (Button) findViewById(R.id.bSignIn);
         final TextView RegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
+        final TextView PasswordLink = (TextView) findViewById(R.id.tvlupapassLink);
+
 
         RegisterLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +29,17 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this.startActivity(RegisterIntent);
             }
         });
+
+        PasswordLink.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View view){
+               Intent LupapassIntent = new Intent(LoginActivity.this, activity_lp_password1.class);
+               LoginActivity.this.startActivity(LupapassIntent);
+           }
+        });
+
+
+
 
     }
 }
