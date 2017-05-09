@@ -14,21 +14,22 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ic_launcher"/>
+            android:background="@drawable/ic_menu_slideshow"/>
 
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:text="Import Menu"/>
+            android:text="Slide show"/>
 
         <TextView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="www.F-Bar.com"/>
 
     </LinearLayout>
+
 </RelativeLayout>
