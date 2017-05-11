@@ -20,10 +20,10 @@ public class LpPassword extends AppCompatActivity {
         GantiPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent GantiPasswordIntent = new Intent(LpPassword.this, LoginActivity.class);
+                Intent GantiPasswordIntent = new Intent(LpPassword.this, Login.class);
                 LpPassword.this.startActivity(GantiPasswordIntent);
 
             }
         });
     }
-}
+            }

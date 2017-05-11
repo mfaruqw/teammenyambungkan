@@ -29,7 +29,7 @@ public class activity_lp_password2 extends AppCompatActivity {
         batal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent batalIntent = new Intent(activity_lp_password2.this, LoginActivity.class);
+                Intent batalIntent = new Intent(activity_lp_password2.this, Login.class);
                 activity_lp_password2.this.startActivity(batalIntent);
             }
             });

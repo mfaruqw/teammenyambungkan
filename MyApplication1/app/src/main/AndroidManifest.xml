@@ -25,7 +25,10 @@
         <activity android:name=".LpPassword" />
         <activity android:name=".LpPassword1" />
         <activity android:name=".LpPassword2" />
-        <activity android:name=".BuatPertandingan"></activity>
+        <activity android:name=".BuatPertandingan" />
+        <activity android:name=".Sunting" />
+        <activity android:name=".detail" />
+        <activity android:name=".TempatFutsal"></activity>
     </application>
 
 </manifest>

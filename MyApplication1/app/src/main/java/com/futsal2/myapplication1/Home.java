@@ -1,5 +1,6 @@
 package com.futsal2.myapplication1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -81,15 +82,20 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            Intent Buatpertandingan = new Intent(getApplicationContext(), BuatPertandingan.class);
+            startActivity(Buatpertandingan);
         } else if (id == R.id.nav_gallery) {
-
+            Intent inSunting = new Intent(getApplicationContext(), Sunting.class);
+            startActivity(inSunting);
         } else if (id == R.id.nav_slideshow) {
-
+            Intent TempatFutsal = new Intent(getApplicationContext(), TempatFutsal.class);
+            startActivity(TempatFutsal);
         } else if (id == R.id.nav_manage) {
-
+            Intent detailpertandingan = new Intent(getApplicationContext(), detail.class);
+            startActivity(detailpertandingan);
         } else if (id == R.id.nav_share) {
-
+            Intent keluar = new Intent(getApplicationContext(), Login.class);
+            startActivity(keluar);
         }
 //        } else if (id == R.id.nav_send) {
 //
