@@ -1,5 +1,6 @@
 package com.futsal2.myapplication1;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,14 +14,39 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import java.util.HashMap;
+import org.json.JSONArray;
+import android.os.Bundle;
+import android.app.Activity;
+import android.text.Html;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    SessionManager session;
+    JSONArray contacts = null;
+    String nama;
+    ClipData.Item keluar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        session = new SessionManager(getApplicationContext());
+        Toast.makeText(getApplicationContext(), "Login status" +session.isLoggedIn(), Toast.LENGTH_LONG).show();
+        session.checkLogin();
+        HashMap<String, String> user = session.getUserDetails();
+        nama = user.get(SessionManager.KEY_NAME);
+      //  keluar = (ClipData.Item) findViewById(R.id.keluar);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -93,9 +119,9 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             Intent detailpertandingan = new Intent(getApplicationContext(), detail.class);
             startActivity(detailpertandingan);
-        } else if (id == R.id.nav_share) {
-            Intent keluar = new Intent(getApplicationContext(), Login.class);
-            startActivity(keluar);
+        } else if (id == R.id.keluar) {
+            session.logoutUser();
+            finish();
         }
 //        } else if (id == R.id.nav_send) {
 //
