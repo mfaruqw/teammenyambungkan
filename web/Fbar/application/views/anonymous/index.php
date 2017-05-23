@@ -106,8 +106,8 @@
 					Laporan
 					</a>
 					<ul>
-						<li><a href="#">Cetak Data Pemain</a></li>
-						<li><a href="#">Cetak Data Pertandingan</a></li>
+						<li><a href="<?php echo base_url('index.php/anonymous/c_admin/cetak') ?>">Data Pemain</a></li>
+						<li><a href="<?php echo base_url('index.php/anonymous/c_admin/cetak_pertandingan') ?>">Data Pertandingan</a></li>
 					
 						
 					</ul>
@@ -340,14 +340,14 @@
 								<tr>
 									<td> <center> <?php $no++; echo $no; ?> </center></td>
 									<td> <center> <?php echo $hubungi->nama_pengirim; ?> </center></td>
-									<td><center><a href=""><?php echo $hubungi->email; ?></center></center></td>
+									<td><center><a rel="modal" href="<?php echo site_url('anonymous/c_admin/balasemail/'.$hubungi->id_hubungi); ?>"><?php echo $hubungi->email; ?></center></td>
 									<td><center><?php echo $hubungi->subjek; ?></center></td>
 									<td><center><?php echo $hubungi->tanggal; ?></center></td>
 
 									<td><center>
 										<!-- Icons -->
 										
-										 <a href="#" title="Delete"><img src="<?php echo base_url('assets/admin/images/icons/cross.png'); ?>" alt="Delete" /></a> 
+									<a href="<?php echo base_url('index.php/anonymous/c_admin/hapus_hubungi/'.$hubungi->id_hubungi); ?>" title="Delete"><img src="<?php echo base_url('assets/admin/images/icons/cross.png'); ?>" alt="Delete" /></a> 
 										 </center>
 									</td>
 								</tr>

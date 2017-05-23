@@ -101,7 +101,53 @@ $this->model_fbar->hapus_data($where,'tempat');
 redirect('anonymous/c_admin');
 }
 
+function hapus_hubungi($id){
 
+$where = array('id_hubungi' => $id);
+$this->model_fbar->hapus_data($where,'hubungi_kami');
+redirect('anonymous/c_admin');
+}
+
+function balasemail($id){
+$where = array('id_hubungi' => $id);
+$data['balas'] = $this->model_fbar->edit_data($where,'hubungi_kami')->result();
+$this->load->view('anonymous/v_balasemail',$data);
+}
+
+function balas_aksi(){
+ 	$id = $this->input->post('id');
+	$kepada = $this->input->post('email');
+	$subjek = $this->input->post('subjek');
+	$pesan = $this->input->post('pesan');
+	
+	$url=$_SERVER['HTTP_REFERER'];
+
+	$config=array(
+		'protocol' => 'smtp', 
+		'smtp_host' => 'ssl://smtp.googlemail.com',
+		'smtp_port' => '465',
+		'smtp_user' => 'yjasvi@gmail.com', //emaildarifbar
+		'smtp_pass' => '1outsiders',
+		'mailtype' => 'html',
+		'charset' => 'iso-8859-1',
+		'wordwrap' => TRUE
+		);
+
+	$this->load->library('email',$config);
+	$this->email->set_newline("\r\n");
+	$this->email->from('yjasvi@gmail.com');
+	$this->email->to($kepada);
+	$this->email->subject($subjek);
+	$this->email->message($pesan);
+	
+	if ($this->email->send()) {
+		 redirect('anonymous/c_admin');
+	}else{
+
+		show_error($this->email->print_debugger());
+	}
+
+	}
 
  
 function edittempat($id){
@@ -109,6 +155,7 @@ $where = array('id_tempat' => $id);
 $data['edit'] = $this->model_fbar->edit_data($where,'tempat')->result();
 $this->load->view('anonymous/v_edittempat',$data);
 }
+
 
 
  
@@ -178,6 +225,35 @@ $this->load->view('anonymous/v_edittempat',$data);
            
         }
 
+}
+
+
+function cetak(){
+	ob_start();
+	$data['cetak'] = $this->model_fbar->tampil_pemain();
+	$this->load->view('anonymous/v_pemain',$data);
+	$html=ob_get_contents();
+	ob_end_clean();
+
+	require_once('./assets/print/html2pdf.class.php');
+$pdf = new HTML2PDF('P','A4','en');
+$pdf->WriteHTML($html);
+$pdf->Output('Data Pemain.pdf','D');
+ redirect('anonymous/c_admin');
+}
+
+function cetak_pertandingan(){
+	ob_start();
+	$data['cetakper'] = $this->model_fbar->tampil_pertandingan();
+	$this->load->view('anonymous/v_pertandingan',$data);
+	$html=ob_get_contents();
+	ob_end_clean();
+
+	require_once('./assets/print/html2pdf.class.php');
+$pdf = new HTML2PDF('P','A4','en');
+$pdf->WriteHTML($html);
+$pdf->Output('Data Pertandingan.pdf','D');
+ redirect('anonymous/c_admin');
 }
 
 	public function logout() {

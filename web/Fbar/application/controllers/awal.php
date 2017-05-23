@@ -1,5 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class awal extends CI_Controller {
+class Awal extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -45,30 +45,42 @@ else{
 }
 
 function insert_daftar(){
+
 	$id_baru = $this->input->post('id_pe');
 	$nama = $this->input->post('nama');
 	$jk = $this->input->post('jk');
 	$alamat = $this->input->post('alamat');
 	$tgl = $this->input->post('tgl');
+	$bln = $this->input->post('bln');
+	$thn = $this->input->post('thn');
 	$pos = $this->input->post('pos');
 	$no = $this->input->post('no');
 	$email = $this->input->post('email');
-	$password = md5($this->input->post('password'));
+	$password = ($this->input->post('password'));
 
-	
+	$tanggal=$thn."-".$bln."-".$tgl;
+	$cek=$this->model_fbar->cek_email($email);
 
-	
 
-if($nama != ' ' && $jk != ' ' && $alamat != ' '  && $tgl != '' && $pos != '' && $no != '' && $email != '' && $password != '' ){
+	if($cek==TRUE){
+
+	echo "<script type='text/javascript'>alert('Email Sudah Terdaftar') ;</script>";
+	echo "<script>window.location=('javascript:history.go(-1)')</script>";
+	return FALSE;
+
+}else
+
+	if($nama != ' ' && $jk != ' ' && $alamat != ' ' && $pos != '' && $no != '' && $email != '' && $password != '' && $cek == FALSE ){
+
 	$data = array(
 	'id_pemain' => $id_baru,	
 	'nama' => $nama,
 	'jk' => $jk,
-	'tgl_lahir' => $tgl,
+	'tgl_lahir' => $tanggal,
 	'alamat' => $alamat,
 	'posisi' =>$pos,
 	'no_tlp' =>$no,
-	'email' =>$email,
+	'email' => $email,
 	'password' => $password,
 	'tgl_gabung' => date('Y-m-d h:i:s')
 		);
@@ -84,6 +96,9 @@ else{
 		}
 }
 
+function cek_email($email){
+
+}
 
 	
 }

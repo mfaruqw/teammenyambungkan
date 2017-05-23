@@ -470,7 +470,33 @@ foreach ($a as $tempat) {
 									<input type="text" class="form-control" name="alamat" placeholder="Kota Tinggal">
 								</div>
 								<div class="input-field">
-                                	<input type="date" name="tgl" class="form-control" placeholder="Tgl lahir">
+     
+          Tanggal Lahir :
+              <select class="input-sm" name="tgl" size="1" id="tgl">
+                  <?
+		     for ($i=1;$i<=31;$i++)
+			 {
+			   echo "<option value=".$i.">".$i."</option>";
+			 }
+		  ?>
+                </select>
+                <select  class="input-sm" name="bln" size="1" id="bln">
+                  <?
+		     $bulan=array("","Januari","Pebruari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+		     for ($i=1;$i<=12;$i++)
+			 {
+			   echo "<option value=".$i.">".$bulan[$i]."</option>";
+			 }
+		  ?>
+                </select>
+                <select class="input-sm" name="thn" size="1" id="thn">
+                  <?
+		     for ($i=1985;$i<= date(Y);$i++)
+			 {
+			   echo "<option value=".$i.">".$i."</option>";
+			 }
+		  ?>
+              </select>
 								</div>
                                 <div class="input-field">
                                 <Select class="form-control " name="pos">

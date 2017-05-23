@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Waktu pembuatan: 17. Mei 2017 jam 17:00
+-- Waktu pembuatan: 21. Mei 2017 jam 20:47
 -- Versi Server: 5.1.33
 -- Versi PHP: 5.2.9
 
@@ -43,34 +43,6 @@ INSERT INTO `admin_login` (`username`, `password`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `booking`
---
-
-CREATE TABLE IF NOT EXISTS `booking` (
-  `id_booking` char(6) NOT NULL,
-  `id_pemain` char(6) NOT NULL,
-  `id_tempat` char(6) NOT NULL,
-  `no_lapangan` char(2) NOT NULL,
-  `tanggal_booking` date NOT NULL,
-  `tanggal_main` date NOT NULL,
-  `start_jam_main` char(5) NOT NULL,
-  `end_jam_main` char(5) NOT NULL,
-  `total_harga` int(10) NOT NULL,
-  `keterangan` varchar(50) NOT NULL,
-  PRIMARY KEY (`id_booking`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `booking`
---
-
-INSERT INTO `booking` (`id_booking`, `id_pemain`, `id_tempat`, `no_lapangan`, `tanggal_booking`, `tanggal_main`, `start_jam_main`, `end_jam_main`, `total_harga`, `keterangan`) VALUES
-('1', 'P23000', '1', '5', '2017-04-24', '2017-04-25', '05:00', '06:00', 10000, 'jijii'),
-('2', 'P23001', '2', '5', '0000-00-00', '2017-04-25', '05:00', '06:00', 10000, 'jijii');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `hubungi_kami`
 --
 
@@ -82,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `hubungi_kami` (
   `pesan` longtext NOT NULL,
   `tanggal` datetime NOT NULL,
   PRIMARY KEY (`id_hubungi`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data untuk tabel `hubungi_kami`
@@ -116,11 +88,36 @@ CREATE TABLE IF NOT EXISTS `pemain` (
 --
 
 INSERT INTO `pemain` (`id_pemain`, `nama`, `jk`, `tgl_lahir`, `alamat`, `posisi`, `no_tlp`, `email`, `password`, `tgl_gabung`) VALUES
-('P14001', 'cbgvc', 'L', '1997-11-10', 'fgf', 'CB', '2242', 'yusfiadil@gmail.com', 'fa45d44e42ae6cf21645fcf329c0716d', '2017-05-14 11:38:11'),
-('P14300', 'yuy', 'L', '1997-11-10', 'uyu', 'GK', 'fh', 'gfg@gt.k', '54768df6eeb13e17b9524dbd9bb44a24', '2017-05-14 11:54:44'),
-('P14301', 'hjgbvjb', 'L', '0000-00-00', 'hkhjk', 'GK', 'hk', 'yusfiadil@gmail.com', 'dbb7a9ca0875f01d193e791247c54399', '2017-05-14 11:56:03'),
-('P14302', '', 'L', '1997-11-10', 'jll', 'GK', '323', 'ee@ggdsg.com', '9cd8c71d76e7bba95e32662a07b6ab02', '2017-05-14 11:56:19'),
-('P17303', 'dgdgdg', 'L', '1997-11-10', 'fdgd', 'GK', '98989', 'yusfiadil@gmail.com', 'e7d707a26e7f7b6ff52c489c60e429b1', '2017-05-17 01:20:00');
+('P20000', 'Yusfi Adil', 'L', '1997-10-11', 'Jember', 'GK', '0900008080', 'yusfiadil@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '2017-05-20 06:09:12'),
+('P20001', 'David S', 'L', '1985-03-10', 'Lumajang', 'CF', '(0331) 789 - 65', 'davidmufc@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '2017-05-20 06:14:28'),
+('P20002', 'Faruq Wahyudi', 'L', '1985-02-02', 'Jember', 'GK', '0000000', 'Mfaru@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', '2017-05-20 06:16:25');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pertandingan`
+--
+
+CREATE TABLE IF NOT EXISTS `pertandingan` (
+  `id_pertandingan` char(6) NOT NULL,
+  `id_pemain` char(6) NOT NULL,
+  `id_tempat` char(6) NOT NULL,
+  `no_lapangan` char(2) NOT NULL,
+  `tanggal_main` date NOT NULL,
+  `start_jam_main` char(5) NOT NULL,
+  `end_jam_main` char(5) NOT NULL,
+  `total_harga` int(10) NOT NULL,
+  `keterangan` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_pertandingan`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `pertandingan`
+--
+
+INSERT INTO `pertandingan` (`id_pertandingan`, `id_pemain`, `id_tempat`, `no_lapangan`, `tanggal_main`, `start_jam_main`, `end_jam_main`, `total_harga`, `keterangan`) VALUES
+('1', 'P23000', '1', '5', '2017-04-25', '05:00', '06:00', 10000, 'jijii'),
+('2', 'P23001', '2', '5', '2017-04-25', '05:00', '06:00', 10000, 'jijii');
 
 -- --------------------------------------------------------
 

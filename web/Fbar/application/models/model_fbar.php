@@ -14,7 +14,12 @@
 	}
 
 	function tampil_pemain(){
-	$query=$this->db->query("SELECT * FROM pemain ORDER BY id_pemain ");
+	$query=$this->db->get('pemain');
+	return $query->result();
+	}
+
+	function tampil_pertandingan(){
+	$query=$this->db->get('pertandingan');
 	return $query->result();
 	}
 
@@ -46,6 +51,15 @@
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+
+	 function cek_email($email) {
+           $query=$this->db->get_where('pemain',array('email' => $email));
+           if ($query->num_rows() > 0 ) {
+
+          return TRUE;
+           }else{
+			return FALSE;
+            }}    
 
 	public function cek_user($data) {
 			$query = $this->db->get_where('admin_login', $data);
