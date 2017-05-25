@@ -14,38 +14,38 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import java.util.HashMap;
-import org.json.JSONArray;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
-import android.text.Html;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    SessionManager session;
-    JSONArray contacts = null;
-    String nama;
-    ClipData.Item keluar;
+    Button btn_logout;
+    TextView txt_id, txt_username;
+    String id, username;
 
+    public static final String TAG_ID = "id";
+    public static final String TAG_USERNAME = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        //
+       // txt_id = (TextView) findViewById(R.id.txt_id);
+        txt_username = (TextView) findViewById(R.id.txt_username);
+        //btn_logout = (Button) findViewById(R.id.btn_logout);
 
-        session = new SessionManager(getApplicationContext());
-        Toast.makeText(getApplicationContext(), "Login status" +session.isLoggedIn(), Toast.LENGTH_LONG).show();
-        session.checkLogin();
-        HashMap<String, String> user = session.getUserDetails();
-        nama = user.get(SessionManager.KEY_NAME);
-      //  keluar = (ClipData.Item) findViewById(R.id.keluar);
+        id = getIntent().getStringExtra(TAG_ID);
+        username = getIntent().getStringExtra(TAG_USERNAME);
 
+        txt_id.setText("ID : " + id);
+        txt_username.setText("USERNAME : " + username);
+        //
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -53,6 +53,7 @@ public class Home extends AppCompatActivity
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
@@ -120,8 +121,9 @@ public class Home extends AppCompatActivity
             Intent detailpertandingan = new Intent(getApplicationContext(), detail.class);
             startActivity(detailpertandingan);
         } else if (id == R.id.keluar) {
-            session.logoutUser();
+            Intent intent = new Intent(Home.this, Login.class);
             finish();
+            startActivity(intent);
         }
 //        } else if (id == R.id.nav_send) {
 //
