@@ -75,7 +75,7 @@ public class Login extends AppCompatActivity {
                 String username = txt_username.getText().toString();
                 String password = txt_password.getText().toString();
 
-                // mengecek kolom yang kos ong
+                // mengecek kolom yang kosong
                 if (username.trim().length() > 0 && password.trim().length() > 0) {
                     if (conMgr.getActiveNetworkInfo() != null
                             && conMgr.getActiveNetworkInfo().isAvailable()

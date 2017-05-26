@@ -15,8 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,7 +22,7 @@ import android.widget.TextView;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btn_logout;
+    //Button btn_logout;
     TextView txt_id, txt_username;
     String id, username;
 
@@ -37,7 +35,7 @@ public class Home extends AppCompatActivity
         setContentView(R.layout.activity_home);
         //
        // txt_id = (TextView) findViewById(R.id.txt_id);
-        txt_username = (TextView) findViewById(R.id.txt_username);
+        //txt_username = (TextView) findViewById(R.id.txt_username);
         //btn_logout = (Button) findViewById(R.id.btn_logout);
 
         id = getIntent().getStringExtra(TAG_ID);
