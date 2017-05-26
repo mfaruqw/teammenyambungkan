@@ -1,12 +1,10 @@
 package com.futsal2.myapplication1;
 
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.Html;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,7 +16,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 import com.futsal2.myapplication1.app.Controller;
-import com.futsal2.myapplication1.Server;
+import com.futsal2.myapplication1.server.Server;
 
 import org.json.JSONException;
 import org.json.JSONObject;

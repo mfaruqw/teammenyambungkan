@@ -20,7 +20,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.futsal2.myapplication1.adapter.DataTempatFutsal;
 import com.futsal2.myapplication1.app.Controller;
 import com.futsal2.myapplication1.data.TempatData;
-import com.futsal2.myapplication1.Server;
+import com.futsal2.myapplication1.server.Server;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,7 +30,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TempatFutsal extends AppCompatActivity {
+public class TempatFutsal extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener{
     ListView list;
     SwipeRefreshLayout swipe;
     List<TempatData> tempatList = new ArrayList<TempatData>();

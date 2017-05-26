@@ -1,4 +1,4 @@
-package com.futsal2.myapplication1;
+package com.futsal2.myapplication1.server;
 
 /**
  * Created by USER on 24/05/2017.
