@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
-//import com.futsal2.myapplication1.R;
+import com.futsal2.myapplication1.R;
 import com.futsal2.myapplication1.app.Controller;
 import com.futsal2.myapplication1.data.TempatData;
 
@@ -24,7 +24,7 @@ public class DataTempatFutsal extends BaseAdapter{
     private List<TempatData> tempatItems;
     ImageLoader imageLoader;
 
-    public DataAdapter(Activity activity, List<TempatData> tempatItems) {
+    public DataTempatFutsal(Activity activity, List<TempatData> tempatItems) {
         this.activity = activity;
         this.tempatItems = tempatItems;
     }
@@ -48,7 +48,7 @@ public class DataTempatFutsal extends BaseAdapter{
         if (inflater == null)
             inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null)
-            convertView = inflater.inflate(android.R.layout.list_row_tempat, null);
+            convertView = inflater.inflate(R.layout.list_row_tempat, null);
         if (imageLoader == null)
             imageLoader = Controller.getInstance().getmImageLoader();
 

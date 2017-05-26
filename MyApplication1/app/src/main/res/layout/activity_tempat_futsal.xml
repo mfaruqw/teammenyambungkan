@@ -7,6 +7,7 @@
     tools:context="com.futsal2.myapplication1.TempatFutsal">
 
     <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
