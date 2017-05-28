@@ -54,3 +54,4 @@ public class TempatData {
         this.detail = detail;
     }
 }
+

@@ -1,99 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.futsal2.myapplication1.BuatPertandingan">
 
-    <EditText
-        android:id="@+id/inpilihtempat"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="pilih tempat futsal"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/inNolapangan"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <EditText
-        android:id="@+id/inNolapangan"
-        android:layout_width="match_parent"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:popupTheme="@style/AppTheme.PopupOverlay">
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <include layout="@layout/content_create" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="No Lapangan"
-        android:layout_marginTop="54dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_add"
+        />
 
-    <EditText
-        android:id="@+id/inMasukkanPemain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Masukkan Jumlah Pemain"
-        android:layout_below="@+id/inpilihtempat"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp" />
-
-    <EditText
-        android:id="@+id/inMaxPemain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Maksimal Pemain"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/inMasukkanPemain"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/inWaktumain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Waktu Main"
-        android:layout_below="@+id/inMaxPemain"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="14dp" />
-
-    <EditText
-        android:id="@+id/inJamMain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Jam Main"
-        android:layout_below="@+id/inPemainyangada"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
-
-    <EditText
-        android:id="@+id/inPemainyangada"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Pemain Yang ada"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/inWaktumain"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/inNamaPertandingan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nama Pertandingan"
-        android:layout_below="@+id/inJamMain"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
-    <Button
-        android:id="@+id/bBuatper"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="Buat Pertandingan"
-        android:textColorHint="#000000"
-        android:layout_marginBottom="33dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

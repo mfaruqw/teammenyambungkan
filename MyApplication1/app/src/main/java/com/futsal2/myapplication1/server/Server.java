@@ -5,6 +5,6 @@ package com.futsal2.myapplication1.server;
  */
 
 public class Server {
-    public static final String URL = "http://192.168.1.4/android/_login/";
+    public static final String URL = "http://192.168.1.9/android/_login/";
     //public static final String URL = "http://192.168.1.4/android/DataTempat/";
 }

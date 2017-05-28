@@ -22,7 +22,6 @@ import android.widget.TextView;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    //Button btn_logout;
     TextView txt_id, txt_username;
     String id, username;
 
@@ -33,10 +32,6 @@ public class Home extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //
-       // txt_id = (TextView) findViewById(R.id.txt_id);
-        //txt_username = (TextView) findViewById(R.id.txt_username);
-        //btn_logout = (Button) findViewById(R.id.btn_logout);
 
         id = getIntent().getStringExtra(TAG_ID);
         username = getIntent().getStringExtra(TAG_USERNAME);
@@ -123,10 +118,6 @@ public class Home extends AppCompatActivity
             finish();
             startActivity(intent);
         }
-//        } else if (id == R.id.nav_send) {
-//
-//        }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
