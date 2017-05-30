@@ -470,33 +470,50 @@ foreach ($a as $tempat) {
 									<input type="text" class="form-control" name="alamat" placeholder="Kota Tinggal">
 								</div>
 								<div class="input-field">
+								
      
-          Tanggal Lahir :
-              <select class="input-sm" name="tgl" size="1" id="tgl">
-                  <?
-		     for ($i=1;$i<=31;$i++)
-			 {
-			   echo "<option value=".$i.">".$i."</option>";
-			 }
-		  ?>
-                </select>
-                <select  class="input-sm" name="bln" size="1" id="bln">
-                  <?
-		     $bulan=array("","Januari","Pebruari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-		     for ($i=1;$i<=12;$i++)
-			 {
-			   echo "<option value=".$i.">".$bulan[$i]."</option>";
-			 }
-		  ?>
-                </select>
-                <select class="input-sm" name="thn" size="1" id="thn">
-                  <?
-		     for ($i=1985;$i<= date(Y);$i++)
-			 {
-			   echo "<option value=".$i.">".$i."</option>";
-			 }
-		  ?>
-              </select>
+	 <form id="Tanggal Lahir" name="Tanggal Lahir" method="post" action="">
+  Tanggal Lahir :
+		<select name = "tanggal">
+				<option value="">--Tanggal--</option>
+				
+				<?php for ($tanggal = 1; $tanggal <=31; $tanggal++)
+				{
+					?>
+				<option value="<?php echo $tanggal; ?>">
+				<?php echo $tanggal; ?>
+				</option>
+				<?php }
+				?>
+				
+		  </select>
+      	<select name="bulan">
+				<option value="">--Bulan--</option>
+				<?php
+				     $namabulan=array("Januari", "Pebruari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+					 ?>
+					 <?php for($bulan=1; $bulan<=12; $bulan++) 
+					 { ?>
+				 <option value="<?php echo $bulan; ?>">
+					<?php echo $namabulan [$bulan-1]; ?>
+					</option>
+					 <?php } 
+					 ?>
+			</select>
+				<select name="tahun">
+					<option value="">--Tahun--</option>
+					<?php
+					for($tahun=2017; $tahun>=1970; $tahun--) 
+					{
+						?>
+					<option value="<?php echo $tahun; ?>">
+						<?php echo $tahun; ?>
+					</option>
+					<?php 
+					}
+					?>
+					</select>
+					
 								</div>
                                 <div class="input-field">
                                 <Select class="form-control " name="pos">
