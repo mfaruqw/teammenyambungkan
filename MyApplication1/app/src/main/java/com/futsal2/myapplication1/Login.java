@@ -15,6 +15,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.futsal2.myapplication1.SharedPreference.SharedPref;
 import com.futsal2.myapplication1.app.Controller;
 import com.futsal2.myapplication1.server.Server;
 
@@ -125,6 +126,8 @@ public class Login extends AppCompatActivity {
                     if (success == 1) {
                         String username = jObj.getString(TAG_USERNAME);
                         String id = jObj.getString(TAG_ID);
+                        //menyimpan variabel sharedpref
+                        SharedPref.getInstance(getApplicationContext()).Login(username);
 
                         Log.e("Successfully Login!", jObj.toString());
 

@@ -19,25 +19,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.futsal2.myapplication1.SharedPreference.SharedPref;
+
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    TextView txt_id, txt_username;
+/**    TextView txt_id, txt_username;
     String id, username;
 
     public static final String TAG_ID = "id";
-    public static final String TAG_USERNAME = "username";
+    public static final String TAG_USERNAME = "username";*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        id = getIntent().getStringExtra(TAG_ID);
+       /** id = getIntent().getStringExtra(TAG_ID);
         username = getIntent().getStringExtra(TAG_USERNAME);
 
         txt_id.setText("ID : " + id);
-        txt_username.setText("USERNAME : " + username);
+        txt_username.setText("USERNAME : " + username);*/
         //
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -101,20 +103,23 @@ public class Home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            Intent Buatpertandingan = new Intent(getApplicationContext(), BuatPertandingan.class);
+        if (id == R.id.nav_buatper) {
+            Intent Buatpertandingan = new Intent(Home.this, BuatPertan.class);
+            finish();
             startActivity(Buatpertandingan);
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_sunting) {
             Intent inSunting = new Intent(getApplicationContext(), Sunting.class);
             startActivity(inSunting);
-        } else if (id == R.id.nav_slideshow) {
-            Intent TempatFutsal = new Intent(getApplicationContext(), TempatFutsal.class);
+        } else if (id == R.id.nav_tempatfustal) {
+            Intent TempatFutsal = new Intent(Home.this, TempatFutsal.class);
+            finish();
             startActivity(TempatFutsal);
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_detailper) {
             Intent detailpertandingan = new Intent(getApplicationContext(), detail.class);
             startActivity(detailpertandingan);
         } else if (id == R.id.keluar) {
-            Intent intent = new Intent(Home.this, Login.class);
+            SharedPref.getInstance(getApplicationContext()).logout();
+            Intent intent = new Intent(getApplicationContext(), Login.class);
             finish();
             startActivity(intent);
         }

@@ -36,12 +36,12 @@ public class TempatFutsal extends AppCompatActivity implements SwipeRefreshLayou
     List<TempatData> tempatList = new ArrayList<TempatData>();
 
     private static final String TAG = TempatFutsal.class.getSimpleName();
-    private static String url_list = Server.URL + "tempat.php?offset=";
+    private static String url = Server.URL + "tempat.php?offset=";
     private int offset = 0;
     int no;
     DataTempatFutsal dataTempatFutsal;
     public static final String TAG_NO       = "no";
-    public static final String TAG_ID       = "id";
+    public static final String TAG_ID       = "id_tempat";
     public static final String TAG_NAMA_TEMPAT   = "nama_tempat";
     public static final String TAG_TANGGAL      = "tanggal";
     public static final String TAG_DETAIL      = "detail";
@@ -123,7 +123,7 @@ public class TempatFutsal extends AppCompatActivity implements SwipeRefreshLayou
     private void callTempat(int page) {
         swipe.setRefreshing(true);
         //create volley requst obj
-        JsonArrayRequest arrReq = new JsonArrayRequest(url_list + page, new Response.Listener<JSONArray>() {
+        JsonArrayRequest arrReq = new JsonArrayRequest(url + page, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 Log.d(TAG, response.toString());
@@ -136,12 +136,12 @@ public class TempatFutsal extends AppCompatActivity implements SwipeRefreshLayou
                         no = obj.getInt(TAG_NO);
                         tempat.setId(obj.getString(TAG_ID));
                         tempat.setNama_tempat(obj.getString(TAG_NAMA_TEMPAT));
+                            tempat.setDetail(obj.getString(TAG_DETAIL));
 
                         if (obj.getString(TAG_GAMBAR) != "") {
                             tempat.setGambar(obj.getString(TAG_GAMBAR));
                         }
                         tempat.setDatetime(obj.getString(TAG_TANGGAL));
-                        tempat.setDetail(obj.getString(TAG_DETAIL));
                         //adding tempat to array tempat
                         tempatList.add(tempat);
                         if (no > offset)

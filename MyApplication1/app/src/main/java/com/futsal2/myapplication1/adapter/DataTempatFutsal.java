@@ -22,7 +22,7 @@ public class DataTempatFutsal extends BaseAdapter{
     private Activity activity;
     private LayoutInflater inflater;
     private List<TempatData> tempatItems;
-    ImageLoader imageLoader;
+   // ImageLoader imageLoader;
 
     public DataTempatFutsal(Activity activity, List<TempatData> tempatItems) {
         this.activity = activity;
@@ -49,8 +49,8 @@ public class DataTempatFutsal extends BaseAdapter{
             inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null)
             convertView = inflater.inflate(R.layout.list_row_tempat, null);
-        if (imageLoader == null)
-            imageLoader = Controller.getInstance().getmImageLoader();
+       // if (imageLoader == null)
+         //   imageLoader = Controller.getInstance().getmImageLoader();
 
         NetworkImageView thumbNail = (NetworkImageView) convertView.findViewById(R.id.tempat_gambar);
         TextView tempat_nama = (TextView) convertView.findViewById(R.id.tempat_nama);
@@ -59,7 +59,7 @@ public class DataTempatFutsal extends BaseAdapter{
 
         TempatData tempat = tempatItems.get(position);
 
-        thumbNail.setImageUrl(tempat.getGambar(), imageLoader);
+//        thumbNail.setImageUrl(tempat.getGambar(), imageLoader);
         tempat_nama.setText(tempat.getNama_tempat());
         tempat_timestamp.setText(tempat.getTanggal());
         isi.setText(Html.fromHtml(tempat.getDetail()));

@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.futsal2.myapplication1.SharedPreference.SharedPref;
+
 public class Splashscreen extends AppCompatActivity {
     //set waktu splashscreen
-    private static int splashInterval = 1000;
+    private static int splashInterval = 700;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +23,19 @@ public class Splashscreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(Splashscreen.this, Login.class);
-                startActivity(i);//menghubungkan activity splashscreen ke login
-
-                //jeda selesai
-                this.finish();
+                if (SharedPref.getInstance(getApplicationContext()).isLoggedIn()) {
+                    Intent iCekUser = new Intent(getApplicationContext(), Home.class);
+                    startActivity(iCekUser);
+                    finish();
+                } else {
+                    Intent iCekUser = new Intent(getApplicationContext(), Login.class);
+                    startActivity(iCekUser);
+                    finish();
+                }
             }
             public void finish(){
 
             }
         }, splashInterval);
-
     }
 }

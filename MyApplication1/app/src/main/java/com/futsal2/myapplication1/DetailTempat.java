@@ -33,13 +33,13 @@ public class DetailTempat extends AppCompatActivity implements SwipeRefreshLayou
     String id_tempat;
 
     private static final String TAG = DetailTempat.class.getSimpleName();
-    public static final String TAG_ID       = "id";
+    public static final String TAG_ID       = "id_tempat";
     public static final String TAG_NAMA_TEMPAT   = "nama_tempat";
-    public static final String TAG_TANGGAL      = "tanggal";
     public static final String TAG_DETAIL      = "detail";
     public static final String TAG_GAMBAR   = "gambar";
+    public static final String TAG_TANGGAL      = "tanggal";
 
-    private static final String url_detail = Server.URL + "detail.php";
+    private static final String url = Server.URL + "detail.php";
     String tag_json_obj = "json_obj_req";
 
     @Override
@@ -70,7 +70,7 @@ public class DetailTempat extends AppCompatActivity implements SwipeRefreshLayou
 
     private void callDetailTempat(final String id) {
         swipe.setRefreshing(true);
-        StringRequest strReq = new StringRequest(Request.Method.POST, url_detail, new Response.Listener<String>() {
+        StringRequest strReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d(TAG, "Response : " + response.toString());
@@ -80,9 +80,10 @@ public class DetailTempat extends AppCompatActivity implements SwipeRefreshLayou
                     JSONObject obj = new JSONObject(response);
 
                     String Nama_tempat = obj.getString(TAG_NAMA_TEMPAT);
+                    String Isi = obj.getString(TAG_DETAIL);
                     String Gambar = obj.getString(TAG_GAMBAR);
                     String Tgl = obj.getString(TAG_TANGGAL);
-                    String Isi = obj.getString(TAG_DETAIL);
+
 
                     nama_tempat.setText(Nama_tempat);
                     tanggal.setText(Tgl);
