@@ -6,19 +6,19 @@
 							<body>
 							<h1 style="text-align: center;">Data Pertandingan </h1>
 <p style="text-align: right;">Didownload Pada Tanggal : <?php echo date('d-M-Y') ?></p>
-							<table border="1" width="100%">
+							<table border="1" width="100%" align="center">
 							
 							<thead>
 								<tr>
 								  
-								   <th>No</th>
-								   <th>ID Pertandingan</th>
-								   <th>ID Pemain</th>
-								   <th>ID Tempat</th>
-								   <th>Nomor Lapangan</th>
-								   <th>Tanggal Main</th>
-								   <th>Lama Main / Jam</th>
-								   <th>Total Harga</th>
+								   <th align="center">No</th>
+								   <th align="center">ID Pertandingan</th>
+								   <th align="center">ID Pemain</th>
+								   <th align="center">ID Tempat</th>
+								   <th align="center">Nomor Lapangan</th>
+								   <th align="center">Tanggal Main</th>
+								   <th align="center">Lama Main / Jam</th>
+								   <th align="center">Total Harga</th>
 								  
 								</tr>
 								

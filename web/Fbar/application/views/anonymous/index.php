@@ -79,7 +79,7 @@
 			<div id="profile-links">
 				Hello, <a href="#" title="Edit your profile"><?php echo $username ?></a><br />
 				<br />
-				<a href="<?php echo site_url('/awal');?>" title="View the Site">View the Site</a> | <a href="<?php echo site_url('anonymous/c_admin/logout'); ?>" title="Sign Out">Sign Out</a>
+				<a href="<?php echo site_url('/awal');?>" title="View the Site" target="_blank">View the Site</a> | <a href="<?php echo site_url('anonymous/c_admin/logout'); ?>" title="Sign Out">Sign Out</a>
 			</div>        
 			
 			<ul id="main-nav">  <!-- Accordion Menu -->
@@ -112,19 +112,6 @@
 						
 					</ul>
 				</li>
-				
-				<li>
-					<a href="#" class="nav-top-item">
-						Setting
-					</a>
-					<ul>
-						<li><a href="#">Ubah Password Admin</a></li>
-						<li><a href="#">Tambah Admin</a></li>
-						
-					</ul>
-				</li>
-				
-				
 				
 			</ul> <!-- End #main-nav -->
 			

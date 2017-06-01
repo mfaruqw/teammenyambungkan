@@ -97,8 +97,7 @@
                 </div> \
                 <div class="footer"> \
                   <a href="#" class="close"> \
-                    <img src="../images/icons/cross_circle.png" title="close" class="close_image" /> \
-                  </a> \
+<img class="icon icons8-Close-Window" width="48" height="48" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB7UlEQVRoge3ZTUsCQRjA8f1Q7ojgQZzFugshQV+gU3gUDwmREEIgRB3qEB26CFH2GfwGGiFCRJg5INGOtuvSPp122XRbd/ZtFOaB56by/zno+iJJYsSIEbPW86WksxSjNsWIUIwgoSUUo7aqpHKh4mk+fUAxMhIMX1xDzcvVQPGqIu9QBY05xlv7OcPpEjNgiuXWGsQDxQimWG4xAyhGXd7hju0GAfCO/rMC8O8WMhsMKGTAeHyA+fUVc5BWKYNWKfMDTItbYNzeAJAJAJnA/PIC6HbWdzyMCMCI+EZEDnDG2wgfJ6HVa2D2B/Z9zP4AtHotecB3eR9+Op1lhMdJLMYDmQAMR6A3G3xeAyyIMPHxvYh9IsLGxwpYhdBOjkLHxw7wQsDbMHR8IgBPRMj4xAA2ottbjv8goJ+dBnrMRAFavQbmy6vrCbBc7LgAXN9tIkLEDnCNfx+D+fQcCSJWgNf7fJArdqIAPxepKBCxAFiusGERkQOCfDwIg4gcYNzfLYXojeOVz6QbggvA+jbGEm/tbK9on57fb3PRAxwIlngnQj9v+r59PIAEVwB4LzNAxajHO9qxgX5abK9BuLXtACeQLlEFTXjHTzGiVEG7zABJkiQ1L1d5A9Q8OgwUbyOUVI5u6l9MYsSIERP7/AK/MRdLu+D9qAAAAABJRU5ErkJggg==">\                  </a> \
                 </div> \
               </td> \
               <td class="b"/> \

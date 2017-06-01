@@ -82,12 +82,6 @@ class c_admin extends CI_Controller {
               redirect('anonymous/c_admin/kk'); //jika gagal maka akan ditampilkan form upload
            
         }
-
-
-
-	
-	 
-	
 	
 	}
 
@@ -119,6 +113,7 @@ function balas_aksi(){
 	$kepada = $this->input->post('email');
 	$subjek = $this->input->post('subjek');
 	$pesan = $this->input->post('pesan');
+	$pesan1=nl2br($pesan);
 	
 	$url=$_SERVER['HTTP_REFERER'];
 
@@ -126,8 +121,8 @@ function balas_aksi(){
 		'protocol' => 'smtp', 
 		'smtp_host' => 'ssl://smtp.googlemail.com',
 		'smtp_port' => '465',
-		'smtp_user' => 'yjasvi@gmail.com', //emaildarifbar
-		'smtp_pass' => '1outsiders',
+		'smtp_user' => 'teammenyambungkan@gmail.com', //emaildarifbar
+		'smtp_pass' => '1teammenyambungkan',
 		'mailtype' => 'html',
 		'charset' => 'iso-8859-1',
 		'wordwrap' => TRUE
@@ -135,11 +130,10 @@ function balas_aksi(){
 
 	$this->load->library('email',$config);
 	$this->email->set_newline("\r\n");
-	$this->email->from('yjasvi@gmail.com');
+	$this->email->from('teammenyambungkan@gmail.com','F-bar');
 	$this->email->to($kepada);
 	$this->email->subject($subjek);
-	$this->email->message($pesan);
-	
+	$this->email->message($pesan1);
 	if ($this->email->send()) {
 		 redirect('anonymous/c_admin');
 	}else{
@@ -167,12 +161,9 @@ $this->load->view('anonymous/v_edittempat',$data);
 	$desk= $this->input->post('desk');
 	$idg = $this->input->post('idgam');
 
+	
 	$namafile='assets/img/tempat/'.$idg;
-
-	
-    unlink ($namafile); 
-	
-
+	unlink ($namafile);
 	$this->load->library('upload');
     $nmfile = "file_".$id; //nama file + fungsi time
     $config['upload_path'] = './assets/img/tempat/'; //Folder untuk menyimpan hasil upload
@@ -217,11 +208,12 @@ $this->load->view('anonymous/v_edittempat',$data);
               }
                 //pesan yang muncul jika berhasil diupload pada session flashdata
                 $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Upload gambar berhasil !!</div></div>");
+
                redirect('anonymous/c_admin'); //jika berhasil maka akan ditampilkan view upload
             }else{
                 //pesan yang muncul jika terdapat error dimasukkan pada session flashdata
                 $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Gagal upload gambar !!</div></div>");
-              redirect('anonymous/c_admin/kk'); //jika gagal maka akan ditampilkan form upload
+              redirect('anonymous/c_admin'); //jika gagal maka akan ditampilkan form upload
            
         }
 
@@ -236,10 +228,10 @@ function cetak(){
 	ob_end_clean();
 
 	require_once('./assets/print/html2pdf.class.php');
-$pdf = new HTML2PDF('P','A4','en');
-$pdf->WriteHTML($html);
-$pdf->Output('Data Pemain.pdf','D');
- redirect('anonymous/c_admin');
+	$pdf = new HTML2PDF('P','A4','en');
+	$pdf->WriteHTML($html);
+	$pdf->Output('Data Pemain.pdf','D');
+ 	redirect('anonymous/c_admin');
 }
 
 function cetak_pertandingan(){

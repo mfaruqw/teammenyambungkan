@@ -30,7 +30,7 @@ foreach ($edit as $tempat) {
 							
 							<fieldset> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
 
-								<input type="text" name="id"  value="<?php echo $tempat->id_tempat?>"/> 
+								<input type="hidden" name="id"  value="<?php echo $tempat->id_tempat?>"/> 
 								<input type="hidden" name="idgam"  value="<?php echo $tempat->gambar?>"/>				
 								  <label>Nama Tempat</label>
 								<input class="text-input medium-input" type="text" name="nama" value="<?php echo $tempat->nama_tempat;?>" ><br><br>
@@ -41,7 +41,7 @@ foreach ($edit as $tempat) {
 								<input class="text-input medium-input" type="text" name="no" value="<?php echo $tempat->no_tlp;?>"> 
 								<br><br>
 								 <label>Gambar</label>
-								<input type="file" class="file" name="filefoto"> 
+								<input type="file" class="file" name="filefoto" value="<?php echo base_url ('assets/img/tempat/'.$tempat->gambar); ?>" > 
 								 <br><br>
 								<label>Deskripsi</label>
 								<textarea class="text-input textarea" name="desk"   cols="79"  rows="15"><?php echo $tempat->deskripsi;?></textarea>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
@@ -111,7 +112,7 @@
 						<div class="slide-caption">
                             <div class="caption-content">
                                 <h2 class="animated fadeInDown">F-Bar ( Futsal Bareng )</h2>
-                                <span class="animated fadeInDown">kamu punya hobi futsal dan gak punya tim atau punya tim <br> tapi pemain kurang, dan bingung cari tempat futsal ? <br> jawabannya ada di F-bar <br>
+                                <span class="animated fadeInDown">kamu punya hobi futsal dan tidak punya tim atau punya tim <br> tapi pemain kurang, dan bingung cari tempat futsal ? <br> jawabannya ada di F-bar <br>
                                 </span>
                                  <!--
 
@@ -130,7 +131,7 @@
 						<div class="slide-caption">
                             <div class="caption-content">
                                 <h2 class="animated fadeInDown">F-Bar ( Futsal Bareng )</h2>
-                                <span class="animated fadeInDown">kamu punya hobi futsal dan gak punya tim atau punya tim <br> tapi pemain kurang, dan bingung cari tempat futsal ? <br> jawabannya ada di F-bar <br>
+                                <span class="animated fadeInDown">kamu punya hobi futsal dan tidak punya tim atau punya tim <br> tapi pemain kurang, dan bingung cari tempat futsal ? <br> jawabannya ada di F-bar <br>
                                </span>
                                 <!--
 
@@ -149,7 +150,7 @@
 						<div class="slide-caption">
                             <div class="caption-content">
                                <h2 class="animated fadeInDown">F-Bar ( Futsal Bareng )</h2>
-                                <span class="animated fadeInDown">kamu punya hobi futsal dan gak punya tim atau punya tim <br> tapi pemain kurang, dan bingung cari tempat futsal ? <br> jawabannya ada di F-bar <br>
+                                <span class="animated fadeInDown">kamu punya hobi futsal dan tidak punya tim atau punya tim <br> tapi pemain kurang, dan bingung cari tempat futsal ? <br> jawabannya ada di F-bar <br>
                                 </span>
                                  <!--
 
@@ -201,7 +202,7 @@
 						<center>
 						<div class="caption-content center-block">
                                <h2 class="animated fadeInDown">Download Aplikasinya</h2>
-                                <span class="animated fadeInDown"> Segera Tunjukkan hobimu :D</span>
+                                <span class="animated fadeInDown">Segera Tampakkan Hobimu </span>
                              
                                  <a href="#" class=" btn btn-black btn-primary"  ><img  src="<?php echo base_url('assets/img/icons/android.png'); ?>" width="200" height="50"></a>
                                 <a href="#" class=" btn btn-black btn-primary"  ><img  src="<?php echo base_url('assets/img/icons/apell.png'); ?>" width="200" height="50"></a>
@@ -250,7 +251,7 @@
 									<i class="fa fa-search fa-3x"></i>
 								</div>
 								<h3>Cari Pertandingan </h3>
-								<p>Cari Pertndingan yang kamu rasa cocok di halaman depan aplikasi ini </p>
+								<p>Cari Pertndingan yang kamu rasa cocok di halaman depan aplikasi</p>
 							</div>
 						</div>
 					
@@ -282,7 +283,7 @@
 					
 						<div class="sec-title text-center wow animated fadeInDown">
 							<h2>TEMPAT FUTSAL YANG TERDAFTAR</h2>
-							<p>List Tempat :</p>
+						
 						</div>
 						
 		
@@ -387,7 +388,7 @@ foreach ($a as $tempat) {
 						
 						<div class="sec-title text-center wow animated fadeInDown">
 							<h2>HUBUNGI KAMI</h2>
-							<p>Tinggalkan Pesan</p>
+							<p>Tinggalkan Pesan disini:</p>
 						</div>
 						
 						
@@ -412,7 +413,7 @@ foreach ($a as $tempat) {
 						<div class="col-md-5 wow animated fadeInRight">
 							<address class="contact-details">
 								<h3>Kontak Kami</h3>						
-								<p><i class="fa fa-pencil"></i>F-Bar<span>Jl.K.h Agus Salim No. 10</span> <span>Mumbulsari -Jember</span></p><br>
+								<p><i class="fa fa-pencil"></i>F-Bar<span>Jl.K.h Agus Salim No. 10</span> <span>Mumbulsari - Jember</span></p><br>
 								<p><i class="fa fa-phone"></i>082257844803</p>
 								<p><i class="fa fa-envelope"></i>f_bar@gmail.com</p>
 							</address>
@@ -432,7 +433,7 @@ foreach ($a as $tempat) {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Isikan Biodatamu</h4>
+          <h4 class="modal-title">Isi Dengan Lengkap</h4>
         </div>
         <div class="modal-body">
 <?php
@@ -470,50 +471,33 @@ foreach ($a as $tempat) {
 									<input type="text" class="form-control" name="alamat" placeholder="Kota Tinggal">
 								</div>
 								<div class="input-field">
-								
      
-	 <form id="Tanggal Lahir" name="Tanggal Lahir" method="post" action="">
-  Tanggal Lahir :
-		<select name = "tanggal">
-				<option value="">--Tanggal--</option>
-				
-				<?php for ($tanggal = 1; $tanggal <=31; $tanggal++)
-				{
-					?>
-				<option value="<?php echo $tanggal; ?>">
-				<?php echo $tanggal; ?>
-				</option>
-				<?php }
-				?>
-				
-		  </select>
-      	<select name="bulan">
-				<option value="">--Bulan--</option>
-				<?php
-				     $namabulan=array("Januari", "Pebruari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
-					 ?>
-					 <?php for($bulan=1; $bulan<=12; $bulan++) 
-					 { ?>
-				 <option value="<?php echo $bulan; ?>">
-					<?php echo $namabulan [$bulan-1]; ?>
-					</option>
-					 <?php } 
-					 ?>
-			</select>
-				<select name="tahun">
-					<option value="">--Tahun--</option>
-					<?php
-					for($tahun=2017; $tahun>=1970; $tahun--) 
-					{
-						?>
-					<option value="<?php echo $tahun; ?>">
-						<?php echo $tahun; ?>
-					</option>
-					<?php 
-					}
-					?>
-					</select>
-					
+          Tanggal Lahir :
+              <select class="input-sm" name="tgl" size="1" id="tgl">
+                  <?php
+		     for ($i=1;$i<=31;$i++)
+			 {
+			   echo "<option value=".$i.">".$i."</option>";
+			 }
+		  ?>
+                </select>
+                <select  class="input-sm" name="bln" size="1" id="bln">
+                  <?php
+		     $bulan=array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+		     for ($i=1;$i<=12;$i++)
+			 {
+			   echo "<option value=".$i.">".$bulan[$i]."</option>";
+			 }
+		  ?>
+                </select>
+                <select class="input-sm" name="thn" size="1" id="thn">
+                  <?php
+		     for ($i=1985;$i<= date(Y);$i++)
+			 {
+			   echo "<option value=".$i.">".$i."</option>";
+			 }
+		  ?>
+              </select>
 								</div>
                                 <div class="input-field">
                                 <Select class="form-control " name="pos">
@@ -548,9 +532,7 @@ foreach ($a as $tempat) {
 </div>
 <!-- end modal -->
 			
-			<section id="google-map">
-				<div id="map-canvas" class="wow animated fadeInUp"></div>
-			</section>
+			
 		
 		</main>
 		
@@ -559,27 +541,11 @@ foreach ($a as $tempat) {
 				<div class="row text-center">
 					<div class="footer-content">
 						<div class="wow animated fadeInDown">
-							<p>newsletter signup</p>
-							<p>Get Cool Stuff! We hate spam!</p>
+							<p>Website Ini Dibuat</p>
+							<p>Untuk Memenuhi Tugas Mata Kuliah Sistem Informasi Terdistribusi</p>
 						</div>
-						<form action="#" method="post" class="subscribe-form wow animated fadeInUp">
-							<div class="input-field">
-								<input type="email" class="subscribe form-control" placeholder="Enter Your Email...">
-								<button type="submit" class="submit-icon">
-									<i class="fa fa-paper-plane fa-lg"></i>
-								</button>
-							</div>
-						</form>
-						<div class="footer-social">
-							<ul>
-								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-skype fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="0.9s"><a href="#"><i class="fa fa-dribbble fa-3x"></i></a></li>
-								<li class="wow animated zoomIn" data-wow-delay="1.2s"><a href="https://www.youtube.com/channel/UC4yzoGuKkCL_8FzI-B-x83A"><i class="fa fa-youtube fa-3x"></i></a></li>
-							</ul>
-						</div>
-                        
+						
+					                   
                        
 						
 						<p>&copy; Copyright F-bar Team</a> </p>

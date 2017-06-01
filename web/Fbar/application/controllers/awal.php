@@ -82,7 +82,7 @@ function insert_daftar(){
 	'no_tlp' =>$no,
 	'email' => $email,
 	'password' => $password,
-	'tgl_gabung' => date('Y-m-d h:i:s')
+	'tgl_gabung' => date('Y-m-d H:i:s')
 		);
 
 	$this->model_fbar->input_data($data,'pemain');

@@ -1,37 +1,29 @@
-							<<!DOCTYPE html>
+							<!DOCTYPE html>
 							<html>
 							<head>
 								<title>Cetak Data Pemain</title>
 							</head>
 							<body>
 							<h1 style="text-align: center;">Data Pemain </h1>
-<p style="text-align: right;">Didownload Pada Tanggal : <?php echo date('d-M-Y') ?></p>
-							<table border="1" width="100%">
+							<p style="text-align: right;">Didownload Pada Tanggal : <?php echo date('d-M-Y') ?></p>
+							<table border="0.5" align="center" width="100%">
 							
-							<thead>
+				
 								<tr>
 								  
-								   <th>No</th>
-								   <th>ID Pemain</th>
-								   <th>Nama</th>
-								   <th>Jenis Kelamin</th>
-								   <th>Tgl Lahir</th>
-								   <th>Alamat</th>
-								   <th>Posisi Sebagai</th>
-								   <th>No. telp</th>
-								   <th>Email</th>
-								   <th>Tgl_Gabung</th>
+								   <th align="center">No</th>
+								   <th align="center">ID Pemain</th>
+								   <th align="center">Nama</th>
+								   <th align="center">Jenis Kelamin</th>
+								   <th align="center">Tgl Lahir</th>
+								   <th align="center">Alamat</th>
+								   <th align="center">Posisi Sebagai</th>
+								   <th align="center">No. telp</th>
+								   <th align="center">Email</th>
+								   <th align="center">Tgl_Gabung</th>
 								</tr>
 								
-							</thead>
-						 
-							<tfoot>
-								<tr>
-									
-								</tr>
-							</tfoot>
-						 
-							<tbody>
+						
 							<?php
 							$no=0;
 							foreach ($cetak as $pemain) {
@@ -57,7 +49,7 @@
 								<?php } ?>
 								
 								
-							</tbody>
+							
 							
 						</table>
 						</body></html>

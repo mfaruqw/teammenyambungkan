@@ -34,11 +34,11 @@ foreach ($balas as $hubungikami) {
 								<input type="hidden" name="id"  value="<?php echo $hubungikami->id_hubungi?>"/> 
 						
 								  <label>Kepada</label>
-								<input class="text-input medium-input" type="text" name="email" value="<?php echo $hubungikami->email;?>" ><br><br>
+								<input class="text-input medium-input" type="text" name="email" value="<?php echo $hubungikami->email;?>" readonly><br><br>
 								<label>Subjek</label>
-								<input class="text-input medium-input" type="text"  name="subjek" value="Re: <?php echo $hubungikami->subjek;?>"> <br><br>
+								<input class="text-input medium-input" type="text"  name="subjek" value="Re: <?php echo $hubungikami->subjek;?>" readonly> <br><br>
  								<label>Pesan</label>
-								<textarea class="text-input textarea" name="pesan"   cols="79"  rows="15">                                                                                                            -------------------------------------------------------------------------------- <?php echo $hubungikami->pesan;?></textarea>
+								<textarea class="" name="pesan"   cols="79"  rows="15" > <?php echo "Terimakasih Telah Mengubungi Kami,\n\n----------------------------------------------------------------------------------------------- \n \n You Say : "; ?> <?php echo $hubungikami->pesan;?></textarea>
 								<p>
 									<input class="button" type="submit" value="Balas" />
 
